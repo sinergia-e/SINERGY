@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+
+
+<odoo>
+  
+  
+  <!-- Vista de formulario -->
+  <record id="view_sinergy_actress_form" model="ir.ui.view">
+    <field name="name">Actrices</field> 
+    <field name="model">sinergy_actress.actress</field> 
+    <field name="arch" type="xml">
+      <form string="Actrices Formulario">
+        <sheet>
+          <group name="group_top">
+            <group name="group_left">
+              <field name="name"/>
+              <field name="height"/>
+            </group>
+            <group name="group_right">
+              <field name="nationality"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field> 
+  </record>
+
+  
+  
+  
+  
+  
+  <!-- Vista de Arbol -->
+  <record id="view_sinergy_actress_tree" model="ir.ui.view">
+    <field name="name">Actrices</field> 
+    <field name="model">sinergy_actress.actress</field> 
+    <field name="arch" type="xml">
+      <tree string="Actrices Arbol">
+        <field name="name" />
+        <field name="height" />
+        <field name="nationality" />
+      </tree>
+    </field> 
+  </record>
+  
+  
+  
+  
+
+  
+  <!-- Accion -->
+  <record id="view_sinergy_actress_action" model="ir.action.act_window">
+    <field name="name">Actrices</field> 
+    <field name="type">ir.action.act_window</field> 
+    <field name="res_model">sinergy_actress.actress</field> 
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p>No hay registros, para crear uno click en "Nuevo"</p>
+    </field>
+  </record>  
+  
+  
+  
+  
+  <!-- Menu -->
+ 
+  <menuitem id="menu_base" name="Modulo sinergia" sequence="1" />
+  <menuitem id="menu_actress" name="Modulo sinergia" parent="menu_base" sequence="0" />
+  <menuitem id="menu_actress_det" name="Modulo sinergia" parent="menu_actress" action="view_sinergy_actress_action" sequence="0" />
+  
+  
+</odoo>
